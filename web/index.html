@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CsoulGPT</title>
+  <link rel="stylesheet" href="/chat.css">
+  <script src="/chat.js" defer></script>
+</head>
+<body>
+  <aside id="sidebar" aria-label="Conversation sidebar">
+    <button class="new" type="button"><span class="mark" aria-hidden="true">+</span>New chat</button>
+    <nav class="history" aria-label="Chat history">
+      <h2>Chats</h2>
+      <div id="chat-list"></div>
+    </nav>
+  </aside>
+  <main>
+    <header>
+      <button type="button" class="sidebar-toggle" aria-expanded="false" aria-controls="sidebar">Chats</button>
+      <h1>CsoulGPT</h1>
+    </header>
+    <div class="scroll" id="scroll">
+      <section class="thread" id="thread" aria-label="Conversation" hidden></section>
+      <div class="welcome" id="welcome">How can I help?</div>
+    </div>
+    <footer>
+      <form class="composer" id="composer">
+        <textarea rows="1" maxlength="30000" id="message" aria-label="Message CsoulGPT" placeholder="Message CsoulGPT"></textarea>
+        <button class="send" type="submit" aria-label="Send message" disabled>↑</button>
+      </form>
+      <div class="note" id="status" role="status"></div>
+    </footer>
+  </main>
+</body>
+</html>

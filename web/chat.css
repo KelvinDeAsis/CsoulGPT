@@ -1,0 +1,62 @@
+:root { color-scheme: dark; font-family: Inter, "Segoe UI", sans-serif; background: #212121; color: #efefef; }
+  * { box-sizing: border-box; }
+  body { margin: 0; min-height: 100dvh; display: grid; grid-template-columns: 246px minmax(0, 1fr); }
+  button { font: inherit; color: inherit; border: 0; cursor: pointer; }
+  button:focus-visible { outline: 2px solid #c7c7c7; outline-offset: 3px; }
+  aside { display: flex; flex-direction: column; padding: 15px 12px; background: #171717; min-width: 0; }
+  .new { display: flex; align-items: center; gap: 10px; width: 100%; padding: 10px; border-radius: 9px; text-align: left; background: transparent; font-size: 14px; }
+  .new:hover { background: #252525; }
+  .mark { display: grid; place-items: center; width: 25px; height: 25px; border: 1px solid #474747; border-radius: 8px; font-size: 17px; }
+  .history { margin-top: 28px; }
+  .history h2 { font-size: 12px; font-weight: 600; color: #a3a3a3; margin: 0 10px 8px; }
+  .history button { width: 100%; padding: 9px 10px; text-align: left; border-radius: 8px; background: transparent; font-size: 14px; }
+  .history button[aria-current="true"], .history button:hover { background: #2b2b2b; }
+  main { height: 100dvh; min-width: 0; display: grid; grid-template-rows: 60px minmax(0, 1fr) auto; }
+  header { display: flex; align-items: center; gap: 12px; padding: 0 22px; }
+  h1 { margin: 0; font-size: 19px; font-weight: 600; letter-spacing: -.3px; }
+  .scroll { min-height: 0; overflow: auto; }
+  .thread { max-width: 752px; padding: 45px 20px 24px; margin: 0 auto; display: flow-root; font-size: 16px; line-height: 1.65; }
+  .thread p { margin: 0 0 14px; }
+  .user { display: table; margin: 0 0 31px auto; max-width: 87%; background: #303030; border-radius: 23px; padding: 9px 17px; }
+  .assistant { display: grid; grid-template-columns: minmax(0, 1fr); margin: 0 0 35px; }
+  .assistant p:last-child { margin-bottom: 0; }
+  .assistant strong { font-weight: 600; }
+  .assistant ol { margin: 0 0 14px; padding-left: 22px; }
+  .assistant li { padding-left: 3px; margin-bottom: 6px; }
+  footer { width: min(100%, 752px); padding: 8px 20px 13px; margin: 0 auto; }
+  .composer { display: flex; align-items: end; gap: 12px; background: #2f2f2f; border: 1px solid #383838; border-radius: 26px; padding: 11px 11px 11px 17px; }
+  .composer:focus-within { border-color: #767676; }
+  textarea { background: none; border: 0; resize: none; width: 100%; min-height: 36px; padding: 6px 0; font: inherit; color: inherit; }
+  textarea:focus { outline: none; }
+  textarea::placeholder { color: #b0b0b0; }
+  .send { height: 34px; width: 34px; flex: 0 0 34px; border-radius: 50%; display: grid; place-items: center; background: #efefef; color: #212121; font-size: 20px; font-weight: 600; }
+  .send:disabled { background: #515151; color: #bdbdbd; cursor: default; }
+  .note { padding-top: 8px; text-align: center; color: #a6a6a6; font-size: 12px; }
+  .welcome { margin-top: 16vh; text-align: center; font-size: 28px; font-weight: 600; letter-spacing: -.5px; }
+  [hidden] { display: none !important; }
+  @media (max-width: 720px) {
+    body { display: block; }
+    aside { display: none; }
+    header { justify-content: space-between; padding: 0 16px; }
+    .thread { padding: 22px 16px; }
+    footer { padding-inline: 12px; }
+  }
+  .sidebar-toggle { display: none; }
+  .user { white-space: pre-wrap; overflow-wrap: anywhere; }
+  .assistant { overflow-wrap: anywhere; }
+  .assistant ul { margin: 0 0 14px; padding-left: 22px; }
+  .assistant code { font-family: "Cascadia Mono", Consolas, monospace; background: #303030; border-radius: 4px; padding: 2px 4px; }
+  .assistant pre { margin: 0 0 14px; padding: 13px; border-radius: 9px; background: #171717; overflow: auto; }
+  .assistant pre code { background: none; padding: 0; }
+  .streaming { white-space: pre-wrap; }
+  .message-action { justify-self: start; margin-top: 10px; padding: 6px 11px; border-radius: 8px; background: #303030; font-size: 13px; }
+  .history { min-height: 0; overflow: auto; }
+  .history button { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .welcome { padding-inline: 15px; }
+  textarea { max-height: 150px; }
+  #status { min-height: 25px; }
+  @media (max-width: 720px) {
+    header { justify-content: flex-start; }
+    .sidebar-toggle { display: block; background: #303030; border-radius: 8px; padding: 7px 11px; font-size: 13px; }
+    body.sidebar-open aside { display: flex; position: absolute; z-index: 1; inset: 60px auto 0 0; width: min(246px, 85vw); box-shadow: 12px 0 32px #0005; }
+  }
