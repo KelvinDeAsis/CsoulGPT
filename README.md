@@ -1,6 +1,6 @@
 # CsoulGPT
 
-CsoulGPT is a local browser chatbot for friendly conversation in English. It runs Qwen3.5-4B through Ollama and provides both a browser interface and a Python command-line client.
+CsoulGPT is a local chatbot for friendly conversation in English. Use it in your browser or from the command line. A local Python server streams Qwen3.5-4B replies from Ollama to the browser. After downloading the model, chat works offline.
 
 ## Requirements
 
@@ -11,6 +11,8 @@ CsoulGPT is a local browser chatbot for friendly conversation in English. It run
 
 ## Run the browser app
 
+Clone this repository and open PowerShell in the `CsoulGPT` folder.
+
 1. Start Ollama.
 2. In PowerShell, download the model once:
 
@@ -18,7 +20,7 @@ CsoulGPT is a local browser chatbot for friendly conversation in English. It run
    ollama pull qwen3.5:4b-q4_K_M
    ```
 
-3. Run `Start-CsoulGPT.cmd`.
+3. Run `./Start-CsoulGPT.cmd` from PowerShell or double-click the launcher in File Explorer.
 4. Keep the launcher window open while chatting. Press Ctrl+C there to stop the app.
 
 The launcher checks Python, Ollama, and the model, then starts the local server and opens the browser. Chats remain in the active browser tab and are cleared when it is refreshed or closed.
